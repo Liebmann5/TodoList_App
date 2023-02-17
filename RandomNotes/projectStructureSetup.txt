@@ -1,0 +1,204 @@
+Yarn - stands for Yet Another Resource Negotiator, is a JavaScript dependency manager
+https://www.hostinger.com/tutorials/how-to-install-yarn
+I'm pretty sure it's just a package manager but running 'yarn init' prompts the code below
+    -It just asks a few questions but I'm fairly certain I messed it up as the '-y'
+     response just skips all the questions{IDK WHAT THE OUTPUT WILL BE THOUGH!!!}. Below I
+     just tried to do 'y'+ENTER for the yes command which isn't what happens... it named
+     the project in packages.json "y" and made the version "y" as well. I BELIEVE IF YOU
+     ONLY PRESS "ENTER" IT WILL AUTOFILL TO WHATEVER IS IN THE ()!!!!!!!
+        {Ex. (1.0.0) -> press "ENTER" => in packages.json  ==  version: 1.0.0}
+This was the yarn setup
+
+
+PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp> yarn init
+yarn init v1.22.19
+warning ..\..\..\..\package.json: No license field
+question name (NotificationsApp): y
+question version (1.0.0): y
+question description: It's a notifications app... hopefully. The end goal is to make my raspberry pi only run this app on a timed schedule!
+question entry point (index.js):
+question repository url (https://github.com/Liebmann5/TodoList_App.git):
+question author (Nick Liebmann <53795413+Liebmann5@users.noreply.github.com>):
+question license (MIT):
+question private:
+success Saved package.json
+Done in 271.98s.
+PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp>
+
+
+
+
+
+
+
+
+
+
+
+
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp
+$ git remote
+fatal: not a git repository (or any of the parent directories): .git
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp
+$ git remote add origin https://github.com/Liebmann5/TodoList_App.git
+fatal: not a git repository (or any of the parent directories): .git
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp
+$ git init
+Initialized empty Git repository in C:/Users/user/OneDrive/Documents/GitHub/NotificationsApp/.git/
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (master)
+$ git remote add origin https://github.com/Liebmann5/TodoList_App.git
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (master)
+$ git branch -M main
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Liebmann5/TodoList_App.git'
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ git remote -v
+origin  https://github.com/Liebmann5/TodoList_App.git (fetch)
+origin  https://github.com/Liebmann5/TodoList_App.git (push)
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Liebmann5/TodoList_App.git'
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ sudo npm install -g yarn
+bash: sudo: command not found
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ touch jb.txt
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ rm jb.txt
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ touch nodemon.json
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ touch tsconfig.js
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ touch dist
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ mkdir src/app.ts
+mkdir: cannot create directory ‘src/app.ts’: No such file or directory
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ mkdir src
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ cd src
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ touch app.ts
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ mkdir controllers
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ mkdir todos
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ cd todos
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/todos (main)
+$ touch index.ts
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/todos (main)
+$ cd ..
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ rm controllers
+rm: cannot remove 'controllers': Is a directory
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ rmdir controllers
+rmdir: failed to remove 'controllers': Directory not empty
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ cd src
+bash: cd: src: No such file or directory
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ mkdir controllers
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ cd controllers
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/controllers (main)
+$ mkdir todos
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/controllers (main)
+$ cd todos
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/controllers/todos (main)
+$ touch index.ts
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/controllers/todos (main)
+$ cd ..
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/controllers (main)
+$ cd ..
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ mkdir models
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ mkdir routes
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ mkdir types
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ cd models
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/models (main)
+$ touch todo.ts
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/models (main)
+$ cd ..
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ cd routes
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/routes (main)
+$ touch index.ts
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/routes (main)
+$ cd ..
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ cd types
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/types (main)
+$ touch todo.ts
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src/types (main)
+$ cd ..
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp/src (main)
+$ cd ..
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$ mv tsconfig.js tsconfig.json
+
+user@TriangularReflex MINGW64 ~/OneDrive/Documents/GitHub/NotificationsApp (main)
+$

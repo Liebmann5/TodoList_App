@@ -1,0 +1,9 @@
+{
+  "name": "notifications",
+  "version": "0.0.1",
+  "description": "It's a notifications app... hopefully. The end goal is to make my raspberry pi only run this app on a timed schedule!",
+  "main": "index.js",
+  "repository": "https://github.com/Liebmann5/TodoList_App.git",
+  "author": "Nick Liebmann <53795413+Liebmann5@users.noreply.github.com>",
+  "license": "MIT"
+}

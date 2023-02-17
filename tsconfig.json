@@ -1,0 +1,21 @@
+{
+    //How and when would we call this??
+    //Why do we need this??
+    //How did we determine whether we need this or not??
+    //How do we figure out the correct compilers we need or that are available??
+    //What languages will use this?? We have .json/.ts/.html??? 
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "dist/js",
+        "rootDir": "src",
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["src/types/*.ts", "node_modules", ".vscode"]
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //Would I put .env/.gitignore/etc. ^ here in exclude???
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+}
