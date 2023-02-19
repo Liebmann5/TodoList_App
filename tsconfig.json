@@ -3,7 +3,7 @@
     //Why do we need this??
     //How did we determine whether we need this or not??
     //How do we figure out the correct compilers we need or that are available??
-    //What languages will use this?? We have .json/.ts/.html??? 
+    //What languages will use this?? We have .json/.ts/.html???
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",
@@ -18,4 +18,10 @@
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //Would I put .env/.gitignore/etc. ^ here in exclude???
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    //Q:Where is this compiler?? Did we import this??
+    //Is the location of the compiler everywhere or stationary??
+    //And if at a location why there?? Can it be at multiple??
+
+    //Q: "outDir" has a dist something{no fileType} but has a value above of dist/js???
 }
