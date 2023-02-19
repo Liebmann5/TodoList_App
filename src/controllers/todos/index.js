@@ -36,12 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.deleteTodo = exports.updateTodo = exports.addTodo = exports.getTodo = void 0;
+exports.deleteTodo = exports.updateTodo = exports.addTodo = exports.getTodos = void 0;
 var todo_1 = require("../../models/todo");
 //          THIS IS CRUD!!!
 //We'll use this f(n) getTodos() to fetch data
 //It recieves a req & res parameter and returns a promise
-var getTodo = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+var getTodos = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var todos, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -59,7 +59,7 @@ var getTodo = function (req, res) { return __awaiter(void 0, void 0, void 0, fun
         }
     });
 }); };
-exports.getTodo = getTodo;
+exports.getTodos = getTodos;
 var addTodo = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var body, todo, newTodo, allTodos, error_2;
     return __generator(this, function (_a) {
@@ -83,7 +83,7 @@ var addTodo = function (req, res) { return __awaiter(void 0, void 0, void 0, fun
                 //??? Why does this ^ITodo get an [] all of a sudden???
                 res.status(201).json({
                     message: "Todo added", todo: newTodo, todos: allTodos
-                });
+                }); //ChatGPT: Whereas the todos^ variable in addTodo() is not an array, but rather a property of
                 return [3 /*break*/, 4];
             case 3:
                 error_2 = _a.sent();
@@ -206,5 +206,6 @@ src/controllers/todos/index.ts:71:10 - error TS2552: Cannot find name 'getTodos'
 
 Found 5 errors in the same file, starting at: src/controllers/todos/index.ts:22
 
+PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp> tsc src\controllers\todos\index.ts
 PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp>
 */ 

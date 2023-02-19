@@ -6,7 +6,7 @@ import Todo from "../../models/todo"
 
 //We'll use this f(n) getTodos() to fetch data
     //It recieves a req & res parameter and returns a promise
-const getTodo = async (req: Request, res: Response): Promise<void> => {
+const getTodos = async (req: Request, res: Response): Promise<void> => {
     try {
         const todos: ITodo[] = await Todo.find()
         res.status(200).json( {todos} )
@@ -32,7 +32,8 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
         //??? Why does this ^ITodo get an [] all of a sudden???
         res.status(201).json({ 
             message: "Todo added", todo: newTodo, todos: allTodos 
-        })
+        }) //ChatGPT: Whereas the todos^ variable in addTodo() is not an array, but rather a property of
+           //the response object that is being sent back to the client.
     }
     catch (error) {
         throw error
@@ -68,7 +69,7 @@ const deleteTodo = async (req: Request, res: Response): Promise<void> => {
     }
 }
 
-export { getTodo, addTodo, updateTodo, deleteTodo }
+export { getTodos, addTodo, updateTodo, deleteTodo }
 
 
 
