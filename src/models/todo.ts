@@ -29,3 +29,12 @@ const todoSchema: Schema = new Schema(
 
 
 export default model<ITodo>("Todo", todoSchema);
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//In boilerplate-mongomongoose.person.js we are making a "schema"!!!
+//BUT here we are making an "interface" which is different!!!
+//Check the ChaptGPT Notes! I asked the differences AND I"M FAIRLY
+//CERTAIN THAT WE ARE SEEING THE DIFFERENCES DESCRIBED HERE!!!
+//      {person.js vs todo.ts}
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
