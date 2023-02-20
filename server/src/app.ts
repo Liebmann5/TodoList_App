@@ -5,6 +5,9 @@ import todoRoutes from './routes'
 
 const app: Express = express()
 
+//!!! HAD TO ADD THIS !!!
+app.use(express.json())
+
 const PORT: string | number = process.env.PORT || 4000
 
 app.use(cors())

@@ -1,100 +1,77 @@
-import { Response, Request } from "express"
-import { ITodo } from "./../../types/todo"
-import Todo from "../../models/todo"
-
-
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteTodo = exports.updateTodo = exports.addTodo = exports.getTodos = void 0;
+const todo_1 = __importDefault(require("../../models/todo"));
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //      THIS IS THE index.js file!!!   =>becomes it afte build{npm run build}
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-const getTodos = async (req: Request, res: Response): Promise<void> => {
+const getTodos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const todos: ITodo[] = await Todo.find()
-        res.status(200).json( {todos} )
+        const todos = yield todo_1.default.find();
+        res.status(200).json({ todos });
     }
     catch (error) {
-        throw error
+        throw error;
     }
-}
-
-const addTodo = async (req: Request, res: Response): Promise<void> => {
+});
+exports.getTodos = getTodos;
+const addTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const body = req.body as Pick<ITodo, "name" | "description" | "status">
-
-        const todo: ITodo = new Todo( {
+        const body = req.body;
+        const todo = new todo_1.default({
             name: body.name,
             description: body.description,
             status: body.status,
-        })
-
-        const newTodo: ITodo = await todo.save()
-        const allTodos: ITodo[] = await Todo.find()
-
-        res.status(201).json({ 
-            message: "Todo added", todo: newTodo, todos: allTodos 
-        })
+        });
+        const newTodo = yield todo.save();
+        const allTodos = yield todo_1.default.find();
+        res.status(201).json({
+            message: "Todo added", todo: newTodo, todos: allTodos
+        });
     }
     catch (error) {
-        throw error
+        throw error;
     }
-}
-
-const updateTodo = async (req: Request, res: Response): Promise<void> => {
+});
+exports.addTodo = addTodo;
+const updateTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { params: { id }, body, } = req
-        const updateTodo: ITodo | null = await Todo.findByIdAndUpdate( { _id: id }, body)
-        const allTodos: ITodo[] = await Todo.find()
-        res.status(200).json( {
+        const { params: { id }, body, } = req;
+        const updateTodo = yield todo_1.default.findByIdAndUpdate({ _id: id }, body);
+        const allTodos = yield todo_1.default.find();
+        res.status(200).json({
             message: "Todo updated", todo: updateTodo, todos: allTodos,
-        })
+        });
     }
     catch (error) {
-        throw error
+        throw error;
     }
-}
-
-const deleteTodo = async (req: Request, res: Response): Promise<void> => {
+});
+exports.updateTodo = updateTodo;
+const deleteTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const deleteTodo: ITodo | null = await Todo.findByIdAndRemove(req.params.id)
-        const allTodos: ITodo[] = await Todo.find()
-        res.status(200).json( { message: "Todo deleted", todo: deleteTodo, todos: allTodos, } )
+        const deleteTodo = yield todo_1.default.findByIdAndRemove(req.params.id);
+        const allTodos = yield todo_1.default.find();
+        res.status(200).json({ message: "Todo deleted", todo: deleteTodo, todos: allTodos, });
     }
     catch (error) {
-        throw error
+        throw error;
     }
-}
-
-export { getTodos, addTodo, updateTodo, deleteTodo }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
+});
+exports.deleteTodo = deleteTodo;
+/*
 NOTE: Always test your code genius!!!!
 
 Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes. If you want to re-enable it, run 'Import-Module PSReadLine'.
@@ -102,7 +79,7 @@ Warning: PowerShell detected that you might be using a screen reader and has dis
 PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp> yarn --version
 1.22.19
 PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp> typescript --version
-typescript : The term 'typescript' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct  
+typescript : The term 'typescript' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct
 and try again.
 At line:1 char:1
 + typescript --version
@@ -161,5 +138,5 @@ src/controllers/todos/index.ts:71:10 - error TS2552: Cannot find name 'getTodos'
 Found 5 errors in the same file, starting at: src/controllers/todos/index.ts:22
 
 PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp> tsc src\controllers\todos\index.ts
-PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp> 
-*/
+PS C:\Users\user\OneDrive\Documents\GitHub\NotificationsApp>
+*/ 
