@@ -2,6 +2,6 @@
     "env": {
         "MONGO_USER": "Liebmann5",
         "MONGO_PASSWORD": "Volcom12",
-        "MONGO_DB": "notificationsDB.user_todos"        
+        "MONGO_DB": "notificationsDB"        
     }
 }

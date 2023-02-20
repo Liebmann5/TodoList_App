@@ -1,11 +1,8 @@
 import { Response, Request } from "express"
-import { ITodo } from "./../../types/todo"
+import { ITodo } from "../../types/todo"
 import Todo from "../../models/todo"
-//          THIS IS CRUD!!!
 
 
-//We'll use this f(n) getTodos() to fetch data
-    //It recieves a req & res parameter and returns a promise
 const getTodos = async (req: Request, res: Response): Promise<void> => {
     try {
         const todos: ITodo[] = await Todo.find()
@@ -18,7 +15,6 @@ const getTodos = async (req: Request, res: Response): Promise<void> => {
 
 const addTodo = async (req: Request, res: Response): Promise<void> => {
     try {
-        //!!!!!!!! WEIRD SYNTAX !!!!!!!!
         const body = req.body as Pick<ITodo, "name" | "description" | "status">
 
         const todo: ITodo = new Todo( {
@@ -29,11 +25,10 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
 
         const newTodo: ITodo = await todo.save()
         const allTodos: ITodo[] = await Todo.find()
-        //??? Why does this ^ITodo get an [] all of a sudden???
+
         res.status(201).json({ 
             message: "Todo added", todo: newTodo, todos: allTodos 
-        }) //ChatGPT: Whereas the todos^ variable in addTodo() is not an array, but rather a property of
-           //the response object that is being sent back to the client.
+        })
     }
     catch (error) {
         throw error
@@ -42,14 +37,10 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
 
 const updateTodo = async (req: Request, res: Response): Promise<void> => {
     try {
-        //? Why does body need a ,?????
-        //IDEA: Maybe it's b/c we only wanna save the first 2 values to our variables &
-        //then read but ignore the rest??
         const { params: { id }, body, } = req
-        //^Confused what the heck this line is doing??      |           v remember _id is label in db!!
         const updateTodo: ITodo | null = await Todo.findByIdAndUpdate( { _id: id }, body)
         const allTodos: ITodo[] = await Todo.find()
-        res.status(200).json( {     //v are todo & todos freshly declared variables?? where'd we get'em?
+        res.status(200).json( {
             message: "Todo updated", todo: updateTodo, todos: allTodos,
         })
     }
